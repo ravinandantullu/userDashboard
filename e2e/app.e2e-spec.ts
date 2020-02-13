@@ -1,4 +1,4 @@
-import { UserDashboardPage } from './app.po';
+import { UserDashboardNewPage } from './app.po';
 
 describe('user-dashboard App', () => {
   let page: UserDashboardPage;
