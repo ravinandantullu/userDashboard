@@ -38,10 +38,10 @@ export class AddUserComponent implements OnInit {
         'suite': null,
         'city': this.addUserForm.value.city,
         'zipcode': this.addUserForm.value.zip,
-        'geo': {
-          'lat': null,
-          'lng': null
-        }
+      },
+      'geo': {
+        'lat': null,
+        'lng': null
       },
       'phone': this.addUserForm.value.phonenumber,
       'website': null,

@@ -16,7 +16,8 @@
           <td>{{user.username}}</td>
           <td>{{user.email}}</td>
           <td>
-            <button type="button" class="btn btn-primary" [routerLink]="['/user-details']">User details</button>
+            <button type="button" class="btn btn-primary" [routerLink]="['/user-details', user.name]">User
+              details</button>
             <button type="button" class="btn btn-danger" [routerLink]="['/delete']">Delete</button>
           </td>
         </tr>

@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'initialpage', pathMatch: 'full' },
   { path: 'initialpage', component: InitialPageComponent },
   { path: 'add-user', component: AddUserComponent },
-  { path: 'user-details', component: UserDetailsComponent },
+  { path: 'user-details/:name', component: UserDetailsComponent },
   // { path: 'delete', component: AddUserComponent },
   { path: '**', component: InitialPageComponent }
 ];
