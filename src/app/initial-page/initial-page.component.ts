@@ -7,7 +7,7 @@ import { UserService } from '../services/user/user.service';
 })
 export class InitialPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() { }
 }
