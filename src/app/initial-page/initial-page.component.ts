@@ -6,16 +6,8 @@ import { UserService } from '../services/user/user.service';
   styleUrls: ['./initial-page.component.scss']
 })
 export class InitialPageComponent implements OnInit {
-  users;
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.users = this.userService.userData;
-    this.userService.userDataSubject.subscribe((data) => {
-      this.users = data;
-      this.userService.userData = data;
-    });
-  }
-
+  ngOnInit() { }
 }
