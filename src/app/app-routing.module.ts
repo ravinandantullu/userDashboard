@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
 import { InitialPageComponent } from './initial-page/initial-page.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: InitialPageComponent },
-  { path: 'addUser', component: AddUserComponent },
+  { path: '', redirectTo: 'initialpage', pathMatch: 'full' },
+  { path: 'initialpage', component: InitialPageComponent },
+  { path: 'add-user', component: AddUserComponent },
+  { path: 'user-details', component: UserDetailsComponent },
+  // { path: 'delete', component: AddUserComponent },
   { path: '**', component: InitialPageComponent }
 ];
-
 
 @NgModule({
   imports: [

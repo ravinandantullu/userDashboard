@@ -11,8 +11,6 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './services/user/user.service';
-import { ApiService } from './services/api/api.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +26,7 @@ import { ApiService } from './services/api/api.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService, ApiService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
