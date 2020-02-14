@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from '../services/user/user.service';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-add-user',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AddUserComponent implements OnInit {
 
   addUserForm: FormGroup;
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.addUserForm = new FormGroup({
@@ -25,7 +27,29 @@ export class AddUserComponent implements OnInit {
   }
 
   addUser() {
-    console.log(this.addUserForm);
+    this.userService.userData.push({
+      'id': uuid.v4(),
+      'name': this.addUserForm.value.firstname,
+      'username': this.addUserForm.value.lastname,
+      'email': this.addUserForm.value.email,
+      'address': {
+        'street': this.addUserForm.value.address,
+        'suite': null,
+        'city': this.addUserForm.value.city,
+        'zipcode': this.addUserForm.value.zip,
+        'geo': {
+          'lat': null,
+          'lng': null
+        }
+      },
+      'phone': this.addUserForm.value.phonenumber,
+      'website': null,
+      'company': {
+        'name': null,
+        'catchPhrase': null,
+        'bs': null
+      }
+    });
   }
 
 }
