@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <h1>User list</h1>
+  <form action="">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" [routerLink]="['/user-details', user.id]">User
+              details</button>
+            <button type="button" class="btn btn-danger" (click)="showConfirm(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button type="button" class="btn btn-success" [routerLink]="['/add-user']">Add New User</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="showConfirmModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete User</h5>
+        <button type="button" class="close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this user?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteUser()">Delete</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

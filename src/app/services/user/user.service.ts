@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
-import { User } from '../../interfaces/user';
 
 @Injectable()
 export class UserService {
 
   dataUrl = 'https://jsonplaceholder.typicode.com/users';
-  userData: User[];
-
+  userData: any = [];
   constructor(private http: HttpClient) { }
 
-  getUserData() {
-    this.http.get(this.dataUrl).subscribe((data: User[]) => {
-      this.userData = data;
-    });
+  getUserData() {    
+    const promise = this.http.get(this.dataUrl)
+      .toPromise()
+      .then(userList => {        
+        this.userData = userList;
+        return userList;
+      });
+    return promise; 
   }
 }

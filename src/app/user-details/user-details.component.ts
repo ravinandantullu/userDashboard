@@ -13,7 +13,8 @@ export class UserDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private userService: UserService) { }
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      this.userDetails = (this.userService.userData.filter((user) => user.name === params['name']))[0];
+      const userData = this.userService.userData;
+      this.userDetails = (userData.filter((user) => user.id == params['id']))[0];
     });
   }
 }

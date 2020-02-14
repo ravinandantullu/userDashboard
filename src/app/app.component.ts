@@ -7,7 +7,5 @@ import { UserService } from './services/user/user.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-
-  constructor(private userService: UserService) { this.userService.getUserData(); }
+  constructor() {}
 }

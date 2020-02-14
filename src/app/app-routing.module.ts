@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
-import { InitialPageComponent } from './initial-page/initial-page.component';
+
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'initialpage', pathMatch: 'full' },
-  { path: 'initialpage', component: InitialPageComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'add-user', component: AddUserComponent },
-  { path: 'user-details/:name', component: UserDetailsComponent },
+  { path: 'user-details/:id', component: UserDetailsComponent },
   // { path: 'delete', component: AddUserComponent },
-  { path: '**', component: InitialPageComponent }
+  { path: '**', component: DashboardComponent }
 ];
 
 @NgModule({
