@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../services/user/user.service';
 import * as uuid from 'uuid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -11,7 +12,7 @@ import * as uuid from 'uuid';
 export class AddUserComponent implements OnInit {
 
   addUserForm: FormGroup;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.addUserForm = new FormGroup({
@@ -50,6 +51,7 @@ export class AddUserComponent implements OnInit {
         'bs': null
       }
     });
+    this.router.navigate(['/dashboard']);
   }
 
 }
