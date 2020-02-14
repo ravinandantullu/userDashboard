@@ -7,7 +7,7 @@ import { InitialPageComponent } from './initial-page/initial-page.component'
 
 
 const routes: Routes = [
-  { path: '', component: InitialPageComponent },
+
   { path: 'add-user', component: AddUserComponent }
 
 ];

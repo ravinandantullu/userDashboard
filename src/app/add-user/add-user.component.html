@@ -7,39 +7,44 @@
           <label for="firstname">First Name</label>
           <input type="text" id="firstname" class="form-control" formControlName="firstname">
           <span *ngIf="!addUserForm.get('firstname').valid && addUserForm.get('firstname').touched"
-            class="help-block">Please enter a valid first name</span>
+            class="red">Please enter a valid first name</span>
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
           <input type="text" id="lastname" class="form-control" formControlName="lastname">
-          <span *ngIf="!addUserForm.get('lastname').valid && addUserForm.get('lastname').touched"
-            class="help-block">Please enter a valid last name</span>
+          <span *ngIf="!addUserForm.get('lastname').valid && addUserForm.get('lastname').touched" class="red"
+            >Please enter a valid last name</span>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" class="form-control" formControlName="email">
-          <span *ngIf="!addUserForm.get('email').valid && addUserForm.get('email').touched" class="help-block">Please
+          <span *ngIf="!addUserForm.get('email').valid && addUserForm.get('email').touched" class="red">Please
             enter a valid email</span>
         </div>
         <div class="form-group">
           <label for="phonenumber">Phone Number</label>
           <input type="text" id="phone-number" class="form-control" formControlName="phonenumber">
+          <span *ngIf="!addUserForm.get('phonenumber').valid && addUserForm.get('phonenumber').touched" class="red" >Please enter phone number</span>
         </div>
         <div class="form-group">
           <label for="address">Address</label>
           <input type="text" id="address" class="form-control" formControlName="address">
+          <span *ngIf="!addUserForm.get('address').valid && addUserForm.get('address').touched" class="red" >Please enter address</span>
         </div>
         <div class="form-group">
           <label for="city">City</label>
           <input type="text" id="city" class="form-control" formControlName="city">
+          <span *ngIf="!addUserForm.get('city').valid && addUserForm.get('city').touched" class="red" >Please enter city</span>
         </div>
         <div class="form-group">
           <label for="state">State</label>
           <input type="text" id="state" class="form-control" formControlName="state">
+          <span *ngIf="!addUserForm.get('state').valid && addUserForm.get('state').touched" class="red" >Please enter state</span>
         </div>
         <div class="form-group">
           <label for="zip">Zip</label>
           <input type="text" id="zip" class="form-control" formControlName="zip">
+          <span *ngIf="!addUserForm.get('zip').valid && addUserForm.get('zip').touched" class="red" >Please enter zip</span>
         </div>
         <button [disabled]="!addUserForm.valid" class="btn btn-primary" type="submit">Submit</button>
       </form>
