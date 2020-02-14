@@ -8,11 +8,14 @@ import { UserService } from '../services/user/user.service';
 export class InitialPageComponent implements OnInit {
   users;
 
-
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.users = this.userService.userData;
+    // this.users = this.userService.userData;
+    this.userService.userDataSubject.subscribe((data) => {
+      this.users = data;
+      this.userService.userData = data;
+    });
   }
 
 }
