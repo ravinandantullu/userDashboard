@@ -6,13 +6,12 @@ import { Subject } from 'rxjs/Subject';
 export class UserService {
 
   userData;
-  userDataSubject = new Subject<any>();
+  userDataSubject: any = new Subject<any>();
 
 
   constructor(private apiService: ApiService) {
     this.apiService.getUserData().subscribe((data) => {
       this.userDataSubject.next(data);
-      this.userData = data;
     });
   }
 
