@@ -6,14 +6,20 @@
         <div class="form-group">
           <label for="firstname">First Name</label>
           <input type="text" id="firstname" class="form-control" formControlName="firstname">
+          <span *ngIf="!addUserForm.get('firstname').valid && addUserForm.get('firstname').touched"
+            class="help-block">Please enter a valid first name</span>
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
           <input type="text" id="lastname" class="form-control" formControlName="lastname">
+          <span *ngIf="!addUserForm.get('lastname').valid && addUserForm.get('lastname').touched"
+            class="help-block">Please enter a valid last name</span>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" class="form-control" formControlName="email">
+          <span *ngIf="!addUserForm.get('email').valid && addUserForm.get('email').touched" class="help-block">Please
+            enter a valid email</span>
         </div>
         <div class="form-group">
           <label for="phonenumber">Phone Number</label>
@@ -35,7 +41,7 @@
           <label for="zip">Zip</label>
           <input type="text" id="zip" class="form-control" formControlName="zip">
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button [disabled]="!addUserForm.valid" class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
   </div>
