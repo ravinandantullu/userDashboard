@@ -11,8 +11,10 @@ export class InitialPageComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
+    // this.users = this.userService.userData;
     this.userService.userDataSubject.subscribe((data) => {
       this.users = data;
+      this.userService.userData = data;
     });
   }
 
