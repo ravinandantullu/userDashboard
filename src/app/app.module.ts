@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+
 import { AppRoutingModule } from './app-routing.module';
+import { UserService } from './services/user/user.service';
+import { ApiService } from './services/api/api.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +22,11 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
